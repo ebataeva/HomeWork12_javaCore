@@ -14,17 +14,10 @@ public class Main {
 
     }
 
-    public static void fillArrayWithUnits(Float[] arr) {
-
-        Float n = 1.0f;
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = n;
-        }
-    }
 
     public static void fillArrayWithFormula(Float[] arr) {
 
-        fillArrayWithUnits(arr);
+        Arrays.fill(arr, 1.0f);
 
         long t1 = System.currentTimeMillis();
 
@@ -43,7 +36,7 @@ public class Main {
         Float[] arr1 = Arrays.copyOfRange(arr, 0, HALF);
         Float[] arr2 = Arrays.copyOfRange(arr, HALF, SIZE);
 
-        fillArrayWithUnits(arr);
+        Arrays.fill(arr, 1.0f);
         Thread thread1 = new Thread(new Runnable() {
             @Override
             public void run() {
