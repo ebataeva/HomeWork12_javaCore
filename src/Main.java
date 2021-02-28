@@ -33,6 +33,7 @@ public class Main {
 
     public static void fillArrayWithFormulaWithThreads(Float[] arr) throws InterruptedException {
         Arrays.fill(arr, 1.0f);
+        long t1 = System.currentTimeMillis();
 
         Float[] arr1 = Arrays.copyOfRange(arr, 0, HALF);
         Float[] arr2 = Arrays.copyOfRange(arr, HALF, SIZE);
@@ -55,7 +56,6 @@ public class Main {
                 }
             }
         });
-        long t1 = System.currentTimeMillis();
 
         thread1.start();
         thread2.start();
