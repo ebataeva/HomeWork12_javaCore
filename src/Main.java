@@ -4,7 +4,7 @@ public class Main {
 
     static final int SIZE = 10000000;
     static final int HALF = SIZE / 2;
-    static Float[] ARR = new Float[SIZE];
+    static float[] ARR = new float[SIZE];
 
     public static void main(String[] args) throws InterruptedException {
 
@@ -15,9 +15,9 @@ public class Main {
     }
 
 
-    public static void fillArrayWithFormula(Float[] arr) {
+    public static void fillArrayWithFormula(float[] arr) {
 
-        Arrays.fill(arr, 1.0f);
+        Arrays.fill(arr, (float) 1.0);
 
         long t1 = System.currentTimeMillis();
 
@@ -31,12 +31,12 @@ public class Main {
     }
 
 
-    public static void fillArrayWithFormulaWithThreads(Float[] arr) throws InterruptedException {
-        Arrays.fill(arr, 1.0f);
+    public static void fillArrayWithFormulaWithThreads(float[] arr) throws InterruptedException {
+        Arrays.fill(arr, (float) 1.0);
         long t1 = System.currentTimeMillis();
 
-        Float[] arr1 = Arrays.copyOfRange(arr, 0, HALF);
-        Float[] arr2 = Arrays.copyOfRange(arr, HALF, SIZE);
+        float[] arr1 = Arrays.copyOfRange(arr, 0, HALF);
+        float[] arr2 = Arrays.copyOfRange(arr, HALF, SIZE);
 
         Thread thread1 = new Thread(new Runnable() {
             @Override
